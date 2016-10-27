@@ -6,7 +6,7 @@ easyDB是基于Android原生SQLiteDatabase封装的ORM映射对象SQLite数据�
 ##Features
 * Library只有23kb左右
 * 支持在SD卡创建数据库
-* 支持将项目raw文件的数据库copy到SD卡
+* 支持将项目raw文件夹下的数据库copy到SD卡
 * 根据实体对象自动建表、新增字段不影响数据(SQLite3不支持更改列名和删除列)
 * 支持注解配置表名、字段名、字段默认值、主键
 * 一行代码实现增删改查、更新表结构、分页查询等数据库操作
