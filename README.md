@@ -72,6 +72,23 @@ SQLiteDB.getInstance().queryPage(Test.class,1,5);
 SQLiteDB.getInstance().queryCount(Test.class);
 
 ```
+##Add to project
+Step 1.Add it in your root build.gradle at the end of repositories:
+```
+allprojects {
+    repositories {
+        ...
+        maven { url "https://jitpack.io" }
+    }
+}
+```
+Step 2. Add the dependency
+```
+dependencies {
+    compile 'com.github.1139618418:easyDB:1.0.0'
+}
+```
+
 ###补充
 以上只是简单使用 更多用法请下载代码有详细注释
 
