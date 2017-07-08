@@ -88,7 +88,7 @@ allprojects {
 Step 2. Add the dependency
 ```
 dependencies {
-    compile 'com.github.1139618418:easyDB:1.0.0'
+    compile 'com.github.1139618418:easyDB:1.0.1'
 }
 ```
 
