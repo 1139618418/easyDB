@@ -218,7 +218,25 @@ public class SQLiteDB {
     public <T> int queryCount(Class<T> mClass,String whereClause,String[] args){
         return mSQLExecuteManager.queryCount(mClass,whereClause,args);
     }
+    
+    /**
+     * 对于复杂的查询可以自己写sql语句
+     */
+    public Cursor query(String sql,String[] args){
+        return mSQLExecuteManager.rawQuery(sql,args);
+    }
+    
+    //复杂的查询 返回的Cursor转实体
+    public <T> T query(Class<T> mClass,String sql,String[] args){
+        return CursorUtil.parseOneResult(qyery(sql,args),mClass);
+    }
+    
+    //复杂的查询 返回的Cursor转实体集合
+    public <T> List<T> query(Class<T> mClass,String sql,String[] args){
+        return CursorUtil.parseList(qyery(sql,args),mClass);
+    }
 
+     
     public SQLiteDatabase open(){
         if(null==mDB||!mDB.isOpen()){
             mDB = SQLiteDatabase.openOrCreateDatabase(dbFilePath, null);
