@@ -1,10 +1,12 @@
 package me.happy.easydb;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import java.util.Collection;
 import java.util.List;
 import me.happy.easydb.manager.SQLExecuteManager;
+import me.happy.easydb.utils.CursorUtil;
 import me.happy.easydb.utils.DBUtil;
 
 /**
@@ -222,18 +224,18 @@ public class SQLiteDB {
     /**
      * 对于复杂的查询可以自己写sql语句
      */
-    public Cursor query(String sql,String[] args){
+    public Cursor query(String sql, String[] args){
         return mSQLExecuteManager.rawQuery(sql,args);
     }
     
     //复杂的查询 返回的Cursor转实体
-    public <T> T query(Class<T> mClass,String sql,String[] args){
-        return CursorUtil.parseOneResult(qyery(sql,args),mClass);
+    public <T> T query2sql(Class<T> mClass,String sql,String[] args){
+        return CursorUtil.parseOneResult(query(sql,args),mClass);
     }
     
     //复杂的查询 返回的Cursor转实体集合
-    public <T> List<T> query(Class<T> mClass,String sql,String[] args){
-        return CursorUtil.parseList(qyery(sql,args),mClass);
+    public <T> List<T> queryList2sql(Class<T> mClass,String sql,String[] args){
+        return CursorUtil.parseList(query(sql,args),mClass);
     }
 
      
