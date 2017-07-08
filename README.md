@@ -71,8 +71,11 @@ SQLiteDB.getInstance().queryPage(Test.class,1,5);
 //查询总数
 SQLiteDB.getInstance().queryCount(Test.class);
 
-//用于复杂查询返回实体或者集合 自己写sql
-SQLiteDB.getInstance().query(Test.class,sql语句,args[]);
+//用于复杂查询返回实体 自己写sql
+SQLiteDB.getInstance().query2sql(Test.class,sql语句,args[]);
+
+//用于复杂查询返回集合 自己写sql
+SQLiteDB.getInstance().queryList2sql(Test.class,sql语句,args[]);
 
 ```
 ##Add to project
